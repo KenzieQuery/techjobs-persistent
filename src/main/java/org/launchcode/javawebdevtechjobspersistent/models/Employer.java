@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 public class Employer extends AbstractEntity {
     @NotBlank
     //add validation
-    @Size(message = "Location must be between 52and 250 characters.", min = 2, max = 250)
+    @Size(message = "Location must be between 2 and 250 characters.", min = 2, max = 250)
     //add string field for location
     private String location;
 

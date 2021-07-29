@@ -3,6 +3,7 @@ package org.launchcode.javawebdevtechjobspersistent.models;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 
 
@@ -11,6 +12,7 @@ public abstract class AbstractEntity {
 
     @Id
     @GeneratedValue
+    @NotBlank
     private int id;
 
     private String name;

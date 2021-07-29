@@ -9,18 +9,19 @@ import javax.validation.constraints.Size;
 @Entity
 public class Job extends AbstractEntity{
 
-    @Id
-    @GeneratedValue
-    private int id;
+    //Not needed because moved to AbstractEntity
+//    @Id
+//    @GeneratedValue
+//    @Size(min=1, max=250, message = "ID must be between 1 and 250 characters")
+//    private int id;
 
-    @NotBlank
     @Size(min=2, max=250, message = "Name must be between 2 and 250 characters")
     private String name;
 
-    @NotBlank
+    @Size(min=2, max=250, message = "Employer must be between 2 and 250 characters")
     private String employer;
 
-    @NotBlank
+    @Size(min=2, max=250, message = "Description must be between 2 and 250 characters")
     private String skills;
 
     public Job() {
