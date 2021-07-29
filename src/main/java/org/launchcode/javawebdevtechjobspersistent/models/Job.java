@@ -3,17 +3,24 @@ package org.launchcode.javawebdevtechjobspersistent.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
-public class Job{
+public class Job extends AbstractEntity{
 
     @Id
     @GeneratedValue
     private int id;
 
+    @NotBlank
+    @Size(min=2, max=250, message = "Name must be between 2 and 250 characters")
     private String name;
 
+    @NotBlank
     private String employer;
+
+    @NotBlank
     private String skills;
 
     public Job() {

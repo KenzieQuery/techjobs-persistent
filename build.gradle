@@ -11,7 +11,7 @@ sourceCompatibility = '15'
 repositories {
 	mavenCentral()
 }
-
+//Dependencies are already up to date with starter-data-jpa and mysql-connector-java.//
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'mysql:mysql-connector-java'
