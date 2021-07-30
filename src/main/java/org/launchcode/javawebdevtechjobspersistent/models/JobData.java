@@ -26,20 +26,16 @@ public class JobData {
         if (value.toLowerCase().equals("all")){
             return (ArrayList<Job>) allJobs;
         }
-
         if (column.equals("all")){
             results = findByValue(value, allJobs);
             return results;
         }
         for (Job job : allJobs) {
-
             String aValue = getFieldValue(job, column);
-
             if (aValue != null && aValue.toLowerCase().contains(value.toLowerCase())) {
                 results.add(job);
             }
         }
-
         return results;
     }
 
@@ -52,7 +48,6 @@ public class JobData {
         } else {
             theValue = job.getSkills().toString();
         }
-
         return theValue;
     }
 
@@ -69,7 +64,6 @@ public class JobData {
         ArrayList<Job> results = new ArrayList<>();
 
         for (Job job : allJobs) {
-
             if (job.getName().toLowerCase().contains(lower_val)) {
                 results.add(job);
             } else if (job.getEmployer().toString().toLowerCase().contains(lower_val)) {
@@ -79,9 +73,7 @@ public class JobData {
             } else if (job.toString().toLowerCase().contains(lower_val)) {
                 results.add(job);
             }
-
         }
-
         return results;
     }
 

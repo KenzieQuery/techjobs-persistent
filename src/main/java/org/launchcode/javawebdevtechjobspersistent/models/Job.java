@@ -1,11 +1,8 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.validation.constraints.NotBlank;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 //Update Job Model Step 1: Update the class definition of Job to extend AbstractEntity.
 // Remove the redundant fields from Job.
@@ -28,37 +25,39 @@ public class Job extends AbstractEntity{
     @Size(min=2, max=250, message = "Employer must be between 2 and 250 characters")
     private Employer employer;
 
-    @Size(min=2, max=250, message = "Description must be between 2 and 250 characters")
-    private String skills;
+    @ManyToMany
+    private List<Skill> skills;
+//    @Size(min=2, max=250, message = "Description must be between 2 and 250 characters")
+//    private String skills;
 
     public Job() {
     }
 
-    public Job(String anEmployer, String someSkills) {
+    public Job(Employer anEmployer, List<Skill> someSkills) {
         super();
         this.employer = anEmployer;
         this.skills = someSkills;
     }
 
     // Getters and setters.
+//
+//    public String getName() { return name; }
+//
+//    public void setName(String name) { this.name = name; }
 
-    public String getName() { return name; }
-
-    public void setName(String name) { this.name = name; }
-
-    public String getEmployer() {
+    public @Size(min = 2, max = 250, message = "Employer must be between 2 and 250 characters") Employer getEmployer() {
         return employer;
     }
 
-    public void setEmployer(String employer) {
+    public void setEmployer(Employer employer) {
         this.employer = employer;
     }
 
-    public String getSkills() {
+    public List<Skill> getSkills() {
         return skills;
     }
 
-    public void setSkills(String skills) {
+    public void setSkills(List<Skill> skills) {
         this.skills = skills;
     }
 }
