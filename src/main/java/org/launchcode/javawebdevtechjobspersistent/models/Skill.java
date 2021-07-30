@@ -9,7 +9,7 @@ import javax.validation.constraints.Size;
 public class Skill extends AbstractEntity {
     //validation added to require description and limit response length.
     @NotBlank
-    @Size(message = "Too many Characters.", max = 250)
+    @Size(message = "Please make response 5 to 250 characters long.",min = 5, max = 250)
     //field added for longer description of skill
     private String description;
 
@@ -17,6 +17,7 @@ public class Skill extends AbstractEntity {
     public String getDescription() {
         return description;
     }
+
     public void setDescription(String description) {
         this.description = description;
     }

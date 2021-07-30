@@ -30,6 +30,7 @@ public class HomeController {
         return "add";
     }
 
+    //Eventually need to add List to this
     @PostMapping("add")
     public String processAddJobForm(@ModelAttribute @Valid Job newJob,
                                     Errors errors, Model model, @RequestParam int employerId) {

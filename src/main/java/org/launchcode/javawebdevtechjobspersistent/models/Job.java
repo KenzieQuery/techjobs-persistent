@@ -10,10 +10,10 @@ import javax.validation.constraints.Size;
 public class Job extends AbstractEntity{
 
     //Not needed because moved to AbstractEntity
-//    @Id
-//    @GeneratedValue
-//    @Size(min=1, max=250, message = "ID must be between 1 and 250 characters")
-//    private int id;
+    @Id
+    @GeneratedValue
+    @Size(min=1, max=250, message = "ID must be between 1 and 250 characters")
+    private int id;
 
     @Size(min=2, max=250, message = "Name must be between 2 and 250 characters")
     private String name;
@@ -35,13 +35,9 @@ public class Job extends AbstractEntity{
 
     // Getters and setters.
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setName(String name) { this.name = name; }
 
     public String getEmployer() {
         return employer;
