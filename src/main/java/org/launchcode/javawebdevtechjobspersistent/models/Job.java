@@ -22,7 +22,7 @@ public class Job extends AbstractEntity{
     @ManyToOne
     //Update Job Model Step 2: Replace the type of the field employer to be of type Employer. You will also need to
     // refactor the affected constructor and getter and setter that use this field.
-    @Size(min=2, max=250, message = "Employer must be between 2 and 250 characters")
+//    @Size(min=2, max=250, message = "Employer must be between 2 and 250 characters")
     private Employer employer;
 
     @ManyToMany
