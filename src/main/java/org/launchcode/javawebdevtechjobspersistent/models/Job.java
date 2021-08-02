@@ -45,7 +45,7 @@ public class Job extends AbstractEntity{
 //
 //    public void setName(String name) { this.name = name; }
 
-    public @Size(min = 2, max = 250, message = "Employer must be between 2 and 250 characters") Employer getEmployer() {
+    public Employer getEmployer() {
         return employer;
     }
 
